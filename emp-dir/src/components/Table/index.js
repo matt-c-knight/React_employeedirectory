@@ -1,4 +1,7 @@
 import React from "react";
+import "./style.css";
+
+
 
 function Table(props) {
 
@@ -6,24 +9,22 @@ function Table(props) {
 
 
 return (
-    <div class="container">
+    <div className="container">
         <table>
+        <thead>
             <tr>
                 <th>Image</th>
-                <th>Name</th>
+                <th onClick={
+                   () => props.sortName() 
+                }>Name</th>
                 <th onClick={
                     () => props.sortNumber() 
                 }>Phone</th>
                 <th>Email</th>
                 <th>DOB</th>
             </tr>
-            <tr>
-                <td>{props.image}</td>
-                <td>{props.name}</td>
-                <td>{props.phone}</td>
-                <td>{props.email}</td>
-                <td>{props.dob}</td>
-            </tr>
+            </thead>
+           
         </table>
     </div>
 )
